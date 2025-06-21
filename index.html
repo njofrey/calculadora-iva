@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Calculadora de IVA | Minimalista y Rápida</title>
+    <meta name="description" content="Calcula o desglosa el IVA (19%) de un monto total o neto de forma instantánea. Herramienta rápida, minimalista y fácil de usar.">
+    
+    <!-- Meta Tags para Redes Sociales -->
+    <meta property="og:title" content="Calculadora de IVA Minimalista">
+    <meta property="og:description" content="La forma más fácil de calcular el IVA en Chile. Ingresa un total y obtén el desglose, o viceversa.">
+    
+    <!-- Favicon con Emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧾</text></svg>">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="card">
+            <h1>Calculadora de IVA</h1>
+            
+            <!-- Switch para cambiar el modo de cálculo -->
+            <div class="mode-switcher">
+                <label>
+                    <input type="radio" name="mode" value="from-total" checked>
+                    <span>Desde el TOTAL</span>
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="from-net">
+                    <span>Desde el NETO</span>
+                </label>
+            </div>
+
+            <!-- Input principal -->
+            <div class="input-group">
+                <label id="input-label" for="amount-input">Monto Total (con IVA)</label>
+                <input type="text" inputmode="decimal" id="amount-input" placeholder="Ej: 10.000">
+            </div>
+
+            <!-- Contenedor para los resultados -->
+            <div class="results-container">
+                <div class="result-item" data-value="0">
+                    <h2>Valor Neto</h2>
+                    <p id="net-result">$0</p>
+                </div>
+                <div class="result-item" data-value="0">
+                    <h2>IVA (19%)</h2>
+                    <p id="iva-result">$0</p>
+                </div>
+                <div class="result-item" data-value="0">
+                    <h2>Total (Bruto)</h2>
+                    <p id="total-result">$0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="credit">Diseñado por Nico Jofré</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
